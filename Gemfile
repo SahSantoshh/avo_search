@@ -41,7 +41,8 @@ gem 'money-rails', '~> 1.12'
 
 # Phone number validation
 gem 'phonelib', '~> 0.8.7'
-
+# Searching
+gem 'ransack', github: 'activerecord-hackery/ransack'
 # icons
 gem 'heroicon', '~> 1.0'
 
