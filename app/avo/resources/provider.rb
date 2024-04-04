@@ -9,5 +9,9 @@ class Avo::Resources::Provider < Avo::BaseResource
     field :id, as: :id
     field :name, as: :text
     field :email, as: :text
+    field :amount, as: :number, only_on: :forms
+    field :amount, as: :text, only_on: [:index, :show],
+          sortable: -> { query.order(amount_cents: direction) },
+          format_using: -> { humanized_money_with_symbol(value) }
   end
 end
