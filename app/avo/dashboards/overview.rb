@@ -8,6 +8,6 @@ class Avo::Dashboards::Overview < Avo::Dashboards::BaseDashboard
   # end
 
   def cards
-    card ProvidersMetric
+    card Avo::Cards::ProvidersMetric
   end
 end

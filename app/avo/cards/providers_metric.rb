@@ -1,6 +1,8 @@
 class Avo::Cards::ProvidersMetric < Avo::Cards::MetricCard
   self.id = "providers_metric"
   self.label = "Providers Metric"
+  self.description = 'Count of providers'
+
   # self.description = "Some description"
   # self.cols = 1
   # self.initial_range = 30
@@ -43,6 +45,6 @@ class Avo::Cards::ProvidersMetric < Avo::Cards::MetricCard
 
     # result User.where(created_at: from..to).count
 
-    result ::User.all.count
+    result ::Provider.all.count
   end
 end
