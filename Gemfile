@@ -47,7 +47,7 @@ gem 'ransack', github: 'activerecord-hackery/ransack'
 gem 'heroicon', '~> 1.0'
 
 # avo
-gem 'avo', '>= 3.5.5'
+gem 'avo', '3.4.2'
 gem 'avo-pro', source: 'https://packager.dev/avo-hq'
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]

@@ -10,20 +10,20 @@ GIT
 GEM
   remote: https://packager.dev/avo-hq/
   specs:
-    avo-dashboards (3.5.5)
-      avo (>= 3.5.5)
+    avo-dashboards (3.4.2)
+      avo (>= 3.4.2)
       turbo-rails
       view_component (>= 3.7.0)
       zeitwerk (>= 2.6.12)
-    avo-menu (3.5.5)
-      avo (>= 3.5.5)
+    avo-menu (3.4.2)
+      avo (>= 3.4.2)
       docile
       dry-initializer
       zeitwerk (>= 2.6.12)
-    avo-pro (3.5.5)
-      avo (>= 3.5.5)
-      avo-dashboards (>= 3.5.5)
-      avo-menu (>= 3.5.5)
+    avo-pro (3.4.2)
+      avo (>= 3.4.2)
+      avo-dashboards (>= 3.4.2)
+      avo-menu (>= 3.4.2)
       zeitwerk (>= 2.6.12)
 
 GEM
@@ -108,7 +108,7 @@ GEM
       tzinfo (~> 2.0)
     addressable (2.8.6)
       public_suffix (>= 2.0.2, < 6.0)
-    avo (3.5.5)
+    avo (3.4.2)
       actionview (>= 6.1)
       active_link_to
       activerecord (>= 6.1)
@@ -212,7 +212,7 @@ GEM
       racc (~> 1.4)
     nokogiri (1.16.3-x86_64-linux)
       racc (~> 1.4)
-    pagy (8.0.0)
+    pagy (8.0.1)
     pg (1.5.6)
     phonelib (0.8.8)
     psych (5.1.2)
@@ -325,7 +325,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
-  avo (>= 3.5.5)
+  avo (= 3.4.2)
   avo-pro!
   bootsnap
   debug
