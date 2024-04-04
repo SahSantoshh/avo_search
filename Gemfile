@@ -49,7 +49,7 @@ gem 'heroicon', '~> 1.0'
 # avo
 gem 'avo', '3.4.2'
 gem 'avo-pro', source: 'https://packager.dev/avo-hq'
-
+gem 'pagy', "7.0.6" # for pagination issue
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 # gem "bcrypt", "~> 3.1.7"
 

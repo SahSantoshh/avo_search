@@ -212,7 +212,7 @@ GEM
       racc (~> 1.4)
     nokogiri (1.16.3-x86_64-linux)
       racc (~> 1.4)
-    pagy (8.0.1)
+    pagy (7.0.6)
     pg (1.5.6)
     phonelib (0.8.8)
     psych (5.1.2)
@@ -333,6 +333,7 @@ DEPENDENCIES
   importmap-rails
   jbuilder
   money-rails (~> 1.12)
+  pagy (= 7.0.6)
   pg (~> 1.1)
   phonelib (~> 0.8.7)
   puma (>= 5.0)
