@@ -47,7 +47,7 @@ gem 'ransack', github: 'activerecord-hackery/ransack'
 gem 'heroicon', '~> 1.0'
 
 # avo
-gem 'avo', '3.4.2'
+gem 'avo', '3.5.8'
 gem 'avo-pro', source: 'https://packager.dev/avo-hq'
 gem 'pagy', "7.0.6" # for pagination issue
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
