@@ -14,7 +14,7 @@ Avo.configure do |config|
   config.home_path = -> {'/admin/dashboards/overview'}
 
   ## == Licensing ==
-  # config.license_key = ENV['AVO_LICENSE_KEY']
+  config.license_key = Rails.application.credentials[:avo_license]
 
   ## == Set the context ==
   config.set_context do
@@ -50,7 +50,8 @@ Avo.configure do |config|
   # config.per_page = 24
   # config.per_page_steps = [12, 24, 48, 72]
   # config.via_per_page = 8
-  # config.id_links_to_resource = false
+  config.id_links_to_resource = true
+
 
   ## == Cache options ==
   ## Provide a lambda to customize the cache store used by Avo.
@@ -139,4 +140,12 @@ Avo.configure do |config|
   # config.profile_menu = -> {
   #   link "Profile", path: "/avo/profile", icon: "user-circle"
   # }
+end
+
+
+if defined?(Avo::DynamicFilters)
+  Avo::DynamicFilters.configure do |config|
+    config.button_label = 'Advanced filters'
+    config.always_expanded = true
+  end
 end

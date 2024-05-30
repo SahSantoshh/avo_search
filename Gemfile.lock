@@ -10,20 +10,30 @@ GIT
 GEM
   remote: https://packager.dev/avo-hq/
   specs:
-    avo-dashboards (3.4.2)
-      avo (>= 3.4.2)
+    avo-advanced (3.5.8)
+      avo (>= 3.5.8)
+      avo-dynamic_filters (>= 3.5.8)
+      avo-pro (>= 3.5.8)
+      zeitwerk (>= 2.6.12)
+    avo-dashboards (3.5.8)
+      avo (>= 3.5.8)
       turbo-rails
       view_component (>= 3.7.0)
       zeitwerk (>= 2.6.12)
-    avo-menu (3.4.2)
-      avo (>= 3.4.2)
+    avo-dynamic_filters (3.5.8)
+      avo (>= 3.5.8)
+      ransack (>= 4.1.1)
+      view_component (>= 3.7.0)
+      zeitwerk (>= 2.6.12)
+    avo-menu (3.5.8)
+      avo (>= 3.5.8)
       docile
       dry-initializer
       zeitwerk (>= 2.6.12)
-    avo-pro (3.4.2)
-      avo (>= 3.4.2)
-      avo-dashboards (>= 3.4.2)
-      avo-menu (>= 3.4.2)
+    avo-pro (3.5.8)
+      avo (>= 3.5.8)
+      avo-dashboards (>= 3.5.8)
+      avo-menu (>= 3.5.8)
       zeitwerk (>= 2.6.12)
 
 GEM
@@ -326,7 +336,7 @@ PLATFORMS
 
 DEPENDENCIES
   avo (= 3.5.8)
-  avo-pro!
+  avo-advanced!
   bootsnap
   debug
   heroicon (~> 1.0)
