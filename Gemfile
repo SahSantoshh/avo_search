@@ -46,6 +46,8 @@ gem 'ransack', github: 'activerecord-hackery/ransack'
 # icons
 gem 'heroicon', '~> 1.0'
 
+gem "rolify"
+
 # avo
 gem 'avo', '3.5.8'
 gem 'avo-advanced', source: 'https://packager.dev/avo-hq'
