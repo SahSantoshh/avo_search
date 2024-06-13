@@ -10,6 +10,7 @@ GIT
 GEM
   remote: https://packager.dev/avo-hq/
   specs:
+    ast (2.4.2)
     avo-advanced (3.5.8)
       avo (>= 3.5.8)
       avo-dynamic_filters (>= 3.5.8)
@@ -35,6 +36,31 @@ GEM
       avo-dashboards (>= 3.5.8)
       avo-menu (>= 3.5.8)
       zeitwerk (>= 2.6.12)
+    coderay (1.1.3)
+    json (2.7.2)
+    language_server-protocol (3.17.0.3)
+    parallel (1.24.0)
+    parser (3.3.0.5)
+      ast (~> 2.4.1)
+      racc
+    rainbow (3.1.1)
+    regexp_parser (2.9.0)
+    rexml (3.2.6)
+    rubocop (1.63.1)
+      json (~> 2.3)
+      language_server-protocol (>= 3.17.0)
+      parallel (~> 1.10)
+      parser (>= 3.3.0.2)
+      rainbow (>= 2.2.2, < 4.0)
+      regexp_parser (>= 1.8, < 3.0)
+      rexml (>= 3.2.5, < 4.0)
+      rubocop-ast (>= 1.31.1, < 2.0)
+      ruby-progressbar (~> 1.7)
+      unicode-display_width (>= 2.4.0, < 3.0)
+    rubocop-ast (1.31.2)
+      parser (>= 3.3.0.4)
+    ruby-progressbar (1.13.0)
+    unicode-display_width (2.5.0)
 
 GEM
   remote: https://rubygems.org/
@@ -140,6 +166,7 @@ GEM
     bootsnap (1.18.3)
       msgpack (~> 1.2)
     builder (3.2.4)
+    byebug (11.1.3)
     concurrent-ruby (1.2.3)
     connection_pool (2.4.1)
     crass (1.0.6)
@@ -225,6 +252,9 @@ GEM
     pagy (7.0.6)
     pg (1.5.6)
     phonelib (0.8.8)
+    pry (0.14.2)
+      coderay (~> 1.1)
+      method_source (~> 1.0)
     psych (5.1.2)
       stringio
     public_suffix (5.0.5)
@@ -278,6 +308,11 @@ GEM
     reline (0.5.0)
       io-console (~> 0.5)
     rolify (6.0.1)
+    rubocop-rails (2.24.1)
+      activesupport (>= 4.2.0)
+      rack (>= 1.1)
+      rubocop (>= 1.33.0, < 2.0)
+      rubocop-ast (>= 1.31.1, < 2.0)
     solid_queue (0.2.2)
       rails (~> 7.1)
     sprockets (4.2.1)
@@ -339,6 +374,7 @@ DEPENDENCIES
   avo (= 3.5.8)
   avo-advanced!
   bootsnap
+  byebug (~> 11.1, >= 11.1.3)
   debug
   heroicon (~> 1.0)
   importmap-rails
@@ -347,11 +383,13 @@ DEPENDENCIES
   pagy (= 7.0.6)
   pg (~> 1.1)
   phonelib (~> 0.8.7)
+  pry (~> 0.14.2)
   puma (>= 5.0)
   rails (~> 7.1.3, >= 7.1.3.2)
   ransack!
   redis (>= 4.0.1)
   rolify
+  rubocop-rails
   solid_queue (~> 0.2.1)
   sprockets-rails
   stimulus-rails

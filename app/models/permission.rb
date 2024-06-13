@@ -1,6 +1,6 @@
 class Permission < ApplicationRecord
   # has_and_belongs_to_many :roles, join_table: 'permissions_roles'
-  has_and_belongs_to_many :roles
+  has_and_belongs_to_many :roles, inverse_of: :permissions
 
 
   class << self
