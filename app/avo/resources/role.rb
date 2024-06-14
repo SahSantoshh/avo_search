@@ -14,10 +14,12 @@ class Avo::Resources::Role < Avo::BaseResource
     # field :resource_type, as: :text
     # field :resource_id, as: :number
     # field :resource, as: :belongs_to
-    field :tags, as: :tags,
-          suggestions: -> do
+    field :tags,
+          as: :tags,
+          suggestions: lambda {
             Permission.where.not(id: record.permissions.pluck(:id)).map(&:name)
-    end
+          }
+
     field :permissions,
           as: :has_and_belongs_to_many,
           searchable: true,
