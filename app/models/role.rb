@@ -23,9 +23,9 @@ class Role < ApplicationRecord
     return unless tags_changed?
 
     old_permissions = Permission.where(name: tags_was - tags)
-    permissions.delete(old_permissions)
+    permissions.delete(old_permissions) if old_permissions.present?
     new_permissions = Permission.where(name: tags - tags_was)
-    permissions << new_permissions
+    permissions << new_permissions if new_permissions.present?
   end
 
   def create_permissions_roles
