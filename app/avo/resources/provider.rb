@@ -8,6 +8,7 @@ class Avo::Resources::Provider < Avo::BaseResource
   def fields
     field :id, as: :id
     field :status_check,
+          name: 'Status',
           as: :badge,
           options: {
             success: 'Reconciled',
