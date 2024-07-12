@@ -13,4 +13,8 @@ class Provider < ApplicationRecord
       %w[]
     end
   end
+
+  def status_check
+    status
+  end
 end

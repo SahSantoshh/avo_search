@@ -7,19 +7,20 @@ class Avo::Resources::Provider < Avo::BaseResource
 
   def fields
     field :id, as: :id
-    field :status,
-          as: :status,
-          except_on: %i[forms],
-          neutral_when: [:UnReconciled],
-          success_when: [:Reconciled],
-          sortable: true,
-          filterable: true
+    field :status_check,
+          as: :badge,
+          options: {
+            success: 'Reconciled',
+            neutral: 'UnReconciled'
+          },
+          sortable: true
 
     field :status,
           as: :select,
           enum: Provider.statuses.keys,
           default: 'UnReconciled',
-          only_on: :forms
+          hide_on: [:index, :show],
+          filterable: true
 
     field :name, as: :text
     field :email, as: :text
