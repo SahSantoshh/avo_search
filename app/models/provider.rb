@@ -1,5 +1,5 @@
 class Provider < ApplicationRecord
-  enum :status, { UnReconciled: 0, Reconciled: 1 }, default: :UnReconciled
+  enum :status, { UnReconciled: 0, Reconciled: 1 }, default: :UnReconciled, _prefix: true
 
   validates :name, presence: true
   monetize :amount_cents, as: :amount, default: 0

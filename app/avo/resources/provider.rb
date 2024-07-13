@@ -7,26 +7,29 @@ class Avo::Resources::Provider < Avo::BaseResource
 
   def fields
     field :id, as: :id
+
     field :status_check,
           name: 'Status',
           as: :badge,
           options: {
             success: 'Reconciled',
             neutral: 'UnReconciled'
-          },
-          sortable: true
-
+          }
     field :status,
           as: :select,
           enum: Provider.statuses.keys,
+          filterable: true,
           default: 'UnReconciled',
-          hide_on: [:index, :show],
-          filterable: true
+          hide_on: %i[index show],
+          required: true
 
     field :name, as: :text
     field :email, as: :text
     field :amount, as: :number, only_on: :forms
-    field :amount, as: :text, only_on: [:index, :show],
+
+    field :amount,
+          as: :text,
+          only_on: %i[index show],
           sortable: -> { query.order(amount_cents: direction) },
           format_using: -> { humanized_money_with_symbol(value) }
   end

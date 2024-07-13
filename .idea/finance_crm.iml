@@ -90,7 +90,7 @@
     <orderEntry type="library" scope="PROVIDED" name="msgpack (v1.7.2, asdf: 3.3.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="multi_xml (v0.7.1, asdf: 3.3.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="net-imap (v0.4.14, asdf: 3.3.0) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="net-pop (v0.1.2, asdf: 3.3.0) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="net-pop (v0.1.2@e8d0af, asdf: 3.3.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="net-smtp (v0.5.0, asdf: 3.3.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="nio4r (v2.7.3, asdf: 3.3.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="nokogiri (v1.16.6, asdf: 3.3.0) [gem]" level="application" />
@@ -354,9 +354,6 @@
     </entry>
     <entry key="config/routes.rb">
       <value>file://$MODULE_DIR$/config/routes.rb</value>
-    </entry>
-    <entry key="config/secrets">
-      <value>file://$MODULE_DIR$/config</value>
     </entry>
     <entry key="db">
       <value>file://$MODULE_DIR$/db</value>
