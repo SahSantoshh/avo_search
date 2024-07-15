@@ -16,6 +16,13 @@ class Avo::Resources::User < Avo::BaseResource
     field :id, as: :id
     field :name, as: :text
     field :email, as: :text
+    field :perms,
+      as: :boolean_group,
+      options: -> {
+        Permission.all.each_with_object({}) do |permission, hash|
+          hash[permission.id] = permission.name.humanize
+        end
+      }
 
     field :assigned_roles,
           as: :tags,
