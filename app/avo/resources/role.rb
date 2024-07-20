@@ -34,16 +34,16 @@ class Avo::Resources::Role < Avo::BaseResource
     field :name, as: :text
 
     # this works fine
-    field :user_permissions,
-          as: :boolean_group,
-          options: lambda {
-            Permission.where(controller: 'users').each_with_object({}) do |permission, hash|
-              hash[permission.id] = permission.description
-            end
-          }
+    # field :user_permissions,
+    #       as: :boolean_group,
+    #       options: lambda {
+    #         Permission.where(controller: 'users').each_with_object({}) do |permission, hash|
+    #           hash[permission.id] = permission.description
+    #         end
+    #       }
 
     # doesn't work
-    # permission_groups(show_on: :all)
+    permission_groups(show_on: :all)
 
     field :permissions,
           as: :has_and_belongs_to_many,
