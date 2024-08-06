@@ -32,6 +32,55 @@ class Role < ApplicationRecord
     permissions << Permission.where(name: tags)
   end
 
+  Dir['app/models/*.rb'].each do |file|
+    File.read(file).scan(/class (\w+)/).each do |class_name_array|
+      next if class_name_array.first == 'ApplicationRecord'
+
+      class_name_string = class_name_array.first.underscore
+      method_name = "#{class_name_string}_permissions"
+
+      define_method(method_name) do
+        get_permissions_hash(class_name_string)
+      end
+
+      define_method("#{method_name}=") do |values|
+        update_permissions(class_name_string, values)
+      end
+    end
+  end
+
+  private
+
+  def get_permissions_hash(class_name_string)
+    return {} if class_name_string.nil?
+
+    permissions.where(controller: "#{class_name_string}s").each_with_object({}) do |permission, hash|
+      hash[permission.id] = true
+    end
+  end
+
+  def update_permissions(class_name_string, values)
+    selected_permissions = selected_permissions_ids(values)
+    all_class_permissions = Permission.where(controller: "#{class_name_string}s")
+    selected_class_permissions = selected_permissions & all_class_permissions.map(&:id)
+    existing_class_permissions = permissions.where(controller: "#{class_name_string}s")
+    removable_permissions = removable_permissions(existing_class_permissions, selected_class_permissions)
+    permissions.delete(removable_permissions) if removable_permissions.present?
+    new_permissions = selected_class_permissions - existing_class_permissions.map(&:id)
+    perms = all_class_permissions.select { |permission| new_permissions.include?(permission.id) }
+    permissions << perms
+  end
+
+  def selected_permissions_ids(values)
+    values.select { |_k, v| v == true }.keys
+  end
+
+  def removable_permissions(existing_class_permissions, selected_class_permissions)
+    existing_class_permissions.reject do |permission|
+      selected_class_permissions.include?(permission.id)
+    end
+  end
+
   class << self
     def ransackable_attributes(_auth_object = nil)
       %w[id name resource_type resource_id]

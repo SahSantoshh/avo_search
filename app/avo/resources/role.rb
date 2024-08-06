@@ -8,17 +8,42 @@ class Avo::Resources::Role < Avo::BaseResource
     }
   }
 
+  def permission_groups(**args)
+    Dir['app/models/*.rb'].each do |file|
+      File.read(file).scan(/class (\w+)/).each do |class_name_array|
+        next if class_name_array.first == 'ApplicationRecord'
+
+        class_name_string = class_name_array.first.underscore
+        method_name = "#{class_name_string}_permissions"
+
+        with_options(args) do
+          field method_name,
+                as: :bloolean_group,
+                options: lambda {
+                  Permission.where(controller: "#{class_name_string}s").each_with_object({}) do |permission, hash|
+                    hash[permission.id] = permission.description
+                  end
+                }
+        end
+      end
+    end
+  end
+
   def fields
     field :id, as: :id
     field :name, as: :text
-    # field :resource_type, as: :text
-    # field :resource_id, as: :number
-    # field :resource, as: :belongs_to
-    field :tags,
-          as: :tags,
-          suggestions: lambda {
-            Permission.where.not(id: record.permissions.pluck(:id)).map(&:name)
-          }
+
+    # this works fine
+    # field :user_permissions,
+    #       as: :boolean_group,
+    #       options: lambda {
+    #         Permission.where(controller: 'users').each_with_object({}) do |permission, hash|
+    #           hash[permission.id] = permission.description
+    #         end
+    #       }
+
+    # doesn't work
+    permission_groups(show_on: :all)
 
     field :permissions,
           as: :has_and_belongs_to_many,
