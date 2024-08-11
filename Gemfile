@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 ruby '3.3.0'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
-gem 'rails', '>= 7.2.0.beta2'
+gem 'rails', '>= 7.2.0'
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'sprockets-rails'
@@ -42,7 +42,7 @@ gem 'money-rails', '~> 1.12'
 # Phone number validation
 gem 'phonelib', '~> 0.8.7'
 # Searching
-gem 'pagy', '< 9'
+# gem 'pagy', '< 9'
 gem 'ransack', '~>4.2.0'
 # icons
 gem 'heroicon', '~> 1.0'
@@ -50,11 +50,11 @@ gem 'heroicon', '~> 1.0'
 gem 'rolify'
 
 # avo
-gem 'avo', '3.10.10'
-gem 'avo-advanced', '3.10.10', source: 'https://packager.dev/avo-hq'
+gem 'avo', '3.11.4'
+gem 'avo-advanced', '3.11.4', source: 'https://packager.dev/avo-hq'
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 # gem "bcrypt", "~> 3.1.7"
-gem 'net-pop', github: 'ruby/net-pop' # https://discuss.rubyonrails.org/t/rails-7-dockerfile-build-fails/86041/2
+# gem 'net-pop', github: 'ruby/net-pop' # https://discuss.rubyonrails.org/t/rails-7-dockerfile-build-fails/86041/2
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: %i[ windows jruby ]
