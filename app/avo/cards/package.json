@@ -5,7 +5,6 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "avo:tailwindcss": "tailwindcss -i ./app/assets/stylesheets/avo/avo.tailwind.css -o ./app/assets/builds/avo.tailwind.css -c ./config/avo/tailwind.config.js --minify"
   },
   "repository": {
     "type": "git",

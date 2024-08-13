@@ -13,3 +13,6 @@
 }
 
 */
+[data-controller="dashboard-card"] [data-controller="select"] select {
+    width: 7rem
+}

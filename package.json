@@ -1,0 +1,11 @@
+{
+  "name": "finance_crm",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:SahSantoshh/avo_search.git",
+  "author": "Santosh Prasad Sah <sahsantoshh@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "avo:tailwindcss": "tailwindcss -i ./app/assets/stylesheets/avo/avo.tailwind.css -o ./app/assets/builds/avo.tailwind.css -c ./config/avo/tailwind.config.js --minify"
+  }
+}
