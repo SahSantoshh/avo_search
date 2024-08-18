@@ -29,6 +29,11 @@ class Avo::Resources::User < Avo::BaseResource
     # field :discarded_at, as: :date_time, only_on: %i[index show], sortable: true
 
     tabs do
+      field :products, as: :has_many, searchable: true
+      field :providers,
+            as: :has_many,
+            through: :products,
+            linkable: true
       # Only show roles that have not already been assigned to the object, because Avo does not use the add_role method,
       # so it is possible to assign a role twice
       field :roles, as: :has_many, searchable: true, attach_scope: -> { query.where.not(id: parent.roles.pluck(:id)) }

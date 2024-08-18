@@ -87,7 +87,7 @@ class Role < ApplicationRecord
     end
 
     def ransackable_associations(_auth_object = nil)
-      %w[]
+      %w[permissions]
     end
   end
 
