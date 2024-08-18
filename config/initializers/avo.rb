@@ -44,13 +44,14 @@ Avo.configure do |config|
   # config.locale = 'en-US'
 
   ## == Resource options ==
-  # config.resource_controls_placement = :right
+  config.resource_controls_placement = :left
   # config.model_resource_mapping = {}
   # config.default_view_type = :table
   # config.per_page = 24
   # config.per_page_steps = [12, 24, 48, 72]
   # config.via_per_page = 8
   config.id_links_to_resource = true
+  config.click_row_to_view_record = true
 
 
   ## == Cache options ==

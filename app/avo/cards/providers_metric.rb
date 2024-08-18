@@ -1,10 +1,11 @@
 class Avo::Cards::ProvidersMetric < Avo::Cards::MetricCard
-  self.id = "providers_metric"
-  self.label = "Providers Metric"
+  self.id = 'providers_metric'
+  self.label = 'Providers Metric'
   self.description = 'Count of providers'
-
+  self.initial_range = 'This Month'
+  self.ranges = ['Last Month', 'This Month', 'This Year']
   # self.description = "Some description"
-  # self.cols = 1
+  self.cols = 1
   # self.initial_range = 30
   # self.ranges = {
   #   "7 days": 7,

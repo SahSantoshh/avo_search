@@ -50,8 +50,8 @@ gem 'heroicon', '~> 1.0'
 gem 'rolify'
 
 # avo
-gem 'avo', '3.11.4'
-gem 'avo-advanced', '3.11.4', source: 'https://packager.dev/avo-hq'
+gem 'avo', '3.11.7'
+gem 'avo-advanced', '3.11.7', source: 'https://packager.dev/avo-hq'
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 # gem "bcrypt", "~> 3.1.7"
 # gem 'net-pop', github: 'ruby/net-pop' # https://discuss.rubyonrails.org/t/rails-7-dockerfile-build-fails/86041/2
@@ -81,7 +81,7 @@ end
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem 'web-console'
-
+  gem 'annotate'
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
 

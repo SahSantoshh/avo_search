@@ -27,5 +27,17 @@ class Avo::Resources::Provider < Avo::BaseResource
           only_on: %i[index show],
           sortable: -> { query.order(amount_cents: direction) },
           format_using: -> { humanized_money_with_symbol(value) }
+
+    tabs do
+      field :products,
+            as: :has_many,
+            linkable: true,
+            reloadable: true
+
+      field :users,
+            as: :has_many,
+            through: :products,
+            linkable: true
+    end
   end
 end
