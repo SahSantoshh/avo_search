@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: providers
+#
+#  id              :bigint           not null, primary key
+#  amount_cents    :integer          default(0), not null
+#  amount_currency :string           default("AUD"), not null
+#  email           :string
+#  name            :string
+#  status          :integer          default("UnReconciled")
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#
 class Provider < ApplicationRecord
   enum :status, { UnReconciled: 0, Reconciled: 1 }, default: :UnReconciled, _prefix: true
 
