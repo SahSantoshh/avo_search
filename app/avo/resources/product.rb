@@ -8,6 +8,7 @@ class Avo::Resources::Product < Avo::BaseResource
   def fields
     field :id, as: :id
     field :name, as: :text
+    field :description, as: :rhino
 
     field :provider,
           as: :belongs_to,
