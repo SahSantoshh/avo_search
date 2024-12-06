@@ -52,14 +52,14 @@ gem 'rolify'
 # avo
 gem 'avo', '3.14.3'
 gem 'avo-advanced', '3.14.3', source: 'https://packager.dev/avo-hq'
-gem 'avo-rhino_field', '~> 0.0.11'
+gem 'avo-rhino_field', '~> 0.0.12'
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 # gem "bcrypt", "~> 3.1.7"
 # gem 'net-pop', github: 'ruby/net-pop' # https://discuss.rubyonrails.org/t/rails-7-dockerfile-build-fails/86041/2
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: %i[ windows jruby ]
+gem 'tzinfo-data', platforms: %i[windows jruby]
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', require: false
@@ -82,8 +82,8 @@ end
 
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
-  gem 'web-console'
   gem 'annotate'
+  gem 'web-console'
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
 
